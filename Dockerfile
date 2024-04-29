@@ -24,4 +24,6 @@ COPY --from=builder build/package*.json .
 COPY --from=builder build/node_modules node_modules/
 COPY --from=builder build/dist dist/
 
+ENV PORT 8000
+EXPOSE $PORT
 CMD [ "npm", "start" ]
